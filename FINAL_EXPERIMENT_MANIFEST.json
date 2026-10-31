@@ -1,0 +1,48 @@
+{
+  "status": "FINAL EXPERIMENTAL RESULTS FROZEN",
+  "dataset_cascades": 4072,
+  "events": [
+    "Charlie Hebdo",
+    "Ferguson",
+    "Germanwings",
+    "Sydney Siege"
+  ],
+  "seed": 42,
+  "sd_definition": "Sample SD across the four held-out LOEO events, not repeated random runs.",
+  "macro_f1_summary": {
+    "GCN_TFIDF": {
+      "mean": 0.5263759995941631,
+      "sd": 0.05456116192620918
+    },
+    "GCN_frozen_BERT": {
+      "mean": 0.5928197288351068,
+      "sd": 0.1549571530141108
+    },
+    "BiGCN_TFIDF": {
+      "mean": 0.5308139197017687,
+      "sd": 0.073674642694847
+    }
+  },
+  "TFIDF": {
+    "dimension": 5000,
+    "fit": "Training events only within each LOEO fold",
+    "GCN_trainable_parameters": 656898
+  },
+  "BERT": {
+    "encoder": "bert-base-uncased",
+    "frozen": true,
+    "dimension": 768,
+    "pooling": "attention-mask mean",
+    "max_length": 128,
+    "encoder_parameters": 109482240,
+    "GCN_trainable_parameters": 115202,
+    "embedding_generation_seconds": 124.17,
+    "embedding_cache_mb": 253.97
+  },
+  "BiGCN": {
+    "description": "Adapted canonical-style Bi-GCN under strict LOEO",
+    "hidden_dimension": 64,
+    "dropedge": 0.2,
+    "trainable_parameters": 1288962
+  }
+}
